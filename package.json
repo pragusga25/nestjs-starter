@@ -24,7 +24,8 @@
     "format:apply": "bunx @biomejs/biome format --write ./src",
     "prepare": "husky",
     "prepush": "bun test",
-    "precommit": "bunx @biomejs/biome check ./src ./test"
+    "precommit": "bunx @biomejs/biome check ./src ./test",
+    "commit": "cz"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -46,6 +47,7 @@
     "@types/supertest": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "commitizen": "^4.3.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
