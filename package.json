@@ -16,13 +16,15 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "check": "bunx @biomejs/biome check ./src",
+    "check": "bunx @biomejs/biome check ./src ./test",
     "check:apply": "bunx @biomejs/biome check --apply ./src ./test",
-    "lint": "bunx @biomejs/biome lint ./src",
-    "lint:apply": "bunx @biomejs/biome lint --apply ./src",
+    "lint": "bunx @biomejs/biome lint ./src ./test",
+    "lint:apply": "bunx @biomejs/biome lint --apply ./src ./test",
     "format": "bunx @biomejs/biome format ./src",
     "format:apply": "bunx @biomejs/biome format --write ./src",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepush": "bun test",
+    "precommit": "bunx @biomejs/biome check ./src ./test"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -33,6 +35,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
