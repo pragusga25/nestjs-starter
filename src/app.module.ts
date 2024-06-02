@@ -4,7 +4,7 @@ import { Module } from '@nestjs/common'
 
 @Module({
   imports: [],
-  controllers: [],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
