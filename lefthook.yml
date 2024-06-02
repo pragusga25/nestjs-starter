@@ -20,6 +20,7 @@ commit-msg:
       run: bun run commitlint --edit {1}
 
 pre-push:
+  parallel: true
   commands:
     test:
       run: bun run test:cov
