@@ -2,7 +2,7 @@ import * as request from 'supertest'
 
 import { Test, type TestingModule } from '@nestjs/testing'
 
-import { AppModule } from '@/app.module'
+import { AppModule } from '@@/app.module'
 import type { INestApplication } from '@nestjs/common'
 
 describe('AppController (e2e)', () => {

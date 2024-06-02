@@ -1,5 +1,5 @@
-import { AppController } from '@/app.controller'
-import { AppService } from '@/app.service'
+import { AppController } from '@@/app.controller'
+import { AppService } from '@@/app.service'
 import { Test, type TestingModule } from '@nestjs/testing'
 
 describe('AppController', () => {
@@ -9,6 +9,7 @@ describe('AppController', () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
       providers: [AppService],
+      imports: [],
     }).compile()
 
     appController = app.get<AppController>(AppController)
