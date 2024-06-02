@@ -22,7 +22,6 @@
     "lint:apply": "bunx @biomejs/biome lint --apply ./src ./test",
     "format": "bunx @biomejs/biome format ./src",
     "format:apply": "bunx @biomejs/biome format --write ./src",
-    "prepare": "husky",
     "prepush": "bun test",
     "precommit": "bunx @biomejs/biome check --apply ./src ./test",
     "commit": "cz"
@@ -76,7 +75,27 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
+    "moduleNameMapper": {
+      "@@/(.*)": "<rootDir>/$1"
+    },
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "test-config",
+      "interfaces",
+      "jestGlobalMocks.ts",
+      ".module.ts",
+      "<rootDir>/main.ts",
+      ".mock.ts"
+    ],
     "coverageDirectory": "../coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 95,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
     "testEnvironment": "node"
   }
 }
