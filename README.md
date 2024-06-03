@@ -45,7 +45,7 @@ $ bun run start:prod
 ## Test
 
 ```bash
-# unit tests
+# all tests
 $ bun run test
 
 # e2e tests
