@@ -19,7 +19,9 @@ pre-push:
   parallel: true
   commands:
     test:
+      glob: '**/*.{js,ts}'
       run: bun run test:cov
 
     build:
+      glob: '**/*.{js,ts}'
       run: bun run build
