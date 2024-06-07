@@ -16,6 +16,7 @@
     "test:cov": "vitest run --coverage",
     "test:debug": "vitest --inspect-brk --inspect --logHeapUsage --threads=false",
     "test:e2e": "vitest run --config ./vitest.config.e2e.ts",
+    "test:unit": "vitest run --config ./vitest.config.unit.ts",
     "check": "bunx @biomejs/biome check ./src ./test",
     "check:apply": "bunx @biomejs/biome check --apply ./src ./test",
     "lint": "bunx @biomejs/biome lint ./src ./test",
