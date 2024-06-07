@@ -1,8 +1,8 @@
 import { AppController } from '@@/app.controller'
 import { AppService } from '@@/app.service'
+import { PrismaModule } from '@@/prisma/prisma.module'
 import { Module } from '@nestjs/common'
 import { ThrottlerModule } from '@nestjs/throttler'
-import { PrismaModule } from '@@/prisma/prisma.module'
 
 @Module({
   imports: [
@@ -12,7 +12,7 @@ import { PrismaModule } from '@@/prisma/prisma.module'
         limit: 8,
       },
     ]),
-    PrismaModule
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
